@@ -1,0 +1,74 @@
+
+
+<ion-content>
+  <div *ngIf="!search && !result">
+    <div class="pulse1"></div>
+    <div class="pulse2"></div>
+    <div class="icon" (click)="searchCook()"></div>
+  </div>
+
+  <div *ngIf="search && !result">
+    <div class='centerMe' id='burger'>
+      <div class='bun top'></div>
+      <div class='tomato'></div>
+      <div class='bacon'></div>
+      <div class='cheese'></div>
+      <div class='burger'></div>
+      <div class='salad'></div>
+      <div class='bun bottom'></div>
+    </div>
+    <div class='biteMe centerMe'></div>
+    <div class='crums centerMe'></div>
+  </div>
+
+  <div class="cook" *ngIf="!search && result">
+    <ion-grid>
+      <ion-row>
+
+        <div class="photo" *ngIf="result.image" [ngStyle]="{'background': 'url('+result.image+') no-repeat center'}"></div>
+        <div class="photo" *ngIf="!result.image" style="background: url('https://fetch-livraison.com/wp-content/uploads/2017/02/resto-sondage.jpg')"></div>
+
+        <ion-col col-12 class="informations">
+
+          <h1>{{result.result.name}}</h1>
+          <hr/>
+          <h2>
+            {{distance}} mètres
+          </h2>
+          <span>d'ici</span>
+          <hr/>
+          <div class="details">
+            <div><img src="../../assets/icon/phone.png" class="icon-info" alt="">{{result.result.international_phone_number}}</div>
+            <div><img src="../../assets/icon/star.png" class="icon-info" alt="">{{result.result.rating}}/5</div>
+            <div class="adress">{{result.result.formatted_address}}</div>
+          </div>
+
+          <br>
+
+          <div class="map">
+            <img src="http://images.indianexpress.com/2016/11/hazaribagh-759.jpg" alt="">
+          </div>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+  </div>
+
+</ion-content>
+
+<ion-footer *ngIf="!search && result">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="footer-button share" col-6>
+          Partager
+        </ion-col>
+        <ion-col class="footer-button" center col-6>
+          Itinéraire
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>
