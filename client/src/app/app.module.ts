@@ -4,6 +4,8 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Geolocation } from '@ionic-native/geolocation';
+import { LaunchNavigator } from '@ionic-native/launch-navigator';
+import { AgmCoreModule } from '@agm/core';
 
 import { HttpModule } from '@angular/http';
 
@@ -19,7 +21,10 @@ import { HomePage } from '../pages/home/home';
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDqBpVM6Gu5rPSQ9xnExkBJGEr4YcpoI6c'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -30,6 +35,7 @@ import { HomePage } from '../pages/home/home';
     StatusBar,
     SplashScreen,
     Geolocation,
+    LaunchNavigator,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

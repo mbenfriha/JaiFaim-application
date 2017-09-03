@@ -1,11 +1,12 @@
 {
-  "name": "client",
+  "name": "JaiFaim",
   "app_id": "",
-  "v2": true,
-  "typescript": true,
+
   "proxies": [
     {
       "proxyUrl": "https://maps.googleapis.com"
     }
-  ]
+  ],
+  "type": "ionic-angular"
+
 }

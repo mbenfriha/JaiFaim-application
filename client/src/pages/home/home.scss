@@ -30,10 +30,21 @@
       }
     }
   }
+
+  .details {
+    button {
+      width: 100%;
+    }
+  }
+  agm-map {
+    height: 300px;
+  }
 }
 
 .footer-button {
   text-align: center;
+  font-family: 'PeanutButter';
+  font-size: 1.3em;
 }
 .share {
   border-right: 1px solid grey;
@@ -392,7 +403,7 @@ body {
   position: absolute;
   width: 17em;
   height: 17em;
-  background: url(../../assets/icon/fork&spoon.png) no-repeat;
+  background: url(../assets/icon/fork&spoon.png) no-repeat;
   background-size: 17em 17em;
   margin: auto;
   top: 0; left: 0; bottom: 0; right: 0;
