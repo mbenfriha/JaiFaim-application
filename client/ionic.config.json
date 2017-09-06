@@ -1,12 +1,13 @@
 {
   "name": "JaiFaim",
   "app_id": "",
-
   "proxies": [
     {
       "proxyUrl": "https://maps.googleapis.com"
     }
   ],
-  "type": "ionic-angular"
-
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
 }

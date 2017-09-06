@@ -1,10 +1,18 @@
 
 
 <ion-content>
+  <ion-refresher *ngIf="!search && result" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Tiréer pour rafraîchir"
+      refreshingSpinner="circles"
+      refreshingText="Rafraîchissement...">
+    </ion-refresher-content>
+  </ion-refresher>
   <div *ngIf="!search && !result">
     <div class="pulse1"></div>
     <div class="pulse2"></div>
-    <div class="icon" (click)="searchCook()"></div>
+    <div class="icon-food" (click)="getPos()"></div>
   </div>
 
   <div *ngIf="search && !result">
@@ -22,6 +30,7 @@
   </div>
 
   <div class="cook" *ngIf="!search && result">
+
     <ion-grid>
       <ion-row>
 
@@ -38,8 +47,8 @@
           <span>d'ici</span>
           <hr/>
           <div class="details">
-            <div><img src="assets/icon/phone.png" class="icon-info" alt="">{{result.result.international_phone_number}}</div>
-            <div><img src="assets/icon/star.png" class="icon-info" alt="">{{result.result.rating}}/5</div>
+            <div *ngIf="result.result.international_phone_number"><img src="assets/icon/phone.png" class="icon-info" alt="">{{result.result.international_phone_number}}</div>
+            <div *ngIf="result.result.rating"><img src="assets/icon/star.png" class="icon-info" alt="">{{result.result.rating}}/5</div>
             <div class="adress">{{result.result.formatted_address}}</div>
             <div class="row">
               <div class="col text-center width-50">
